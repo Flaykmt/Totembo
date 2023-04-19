@@ -1,0 +1,174 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title TOTEMBO
+  body 
+    //- Declaration
+    mixin link(name)
+      li.link
+        a(href="#")=name
+    mixin sells(sale, img, vari, name, price)
+      .sells__cards-card 
+            span.sale=sale
+            a.sells-btn 
+              img(src="../src/assets/svg/love.svg", alt="")
+            a.sells-btn.btn2
+              img(src="../src/assets/svg/cart.svg", alt="")
+            img(src=img, alt="")
+            .sells__cards-cardtext 
+              p=vari
+              span=name
+              p=price
+    mixin sells-nosale(img, vari, name, price)
+      .sells__cards-card 
+            a.sells-btn 
+              img(src="../src/assets/svg/love.svg", alt="")
+            a.sells-btn.btn2
+              img(src="../src/assets/svg/cart.svg", alt="")
+            img(src=img, alt="")
+            .sells__cards-cardtext 
+              p=vari
+              span=name
+              p=price
+    mixin header-card(sale, img, vari, name, price)
+      .header__content-card 
+              span.sale=sale
+              img(src=img, alt="")
+              .header__content-card-text
+                p=vari
+                span=name
+                p=price
+    mixin news-card(theme, img, name, descr, data, time)
+      a(href="#").news__cards-card 
+          span.sale=theme
+          img(src=img, alt="")
+          .news__cards-card-link
+            h3=name
+            p=descr
+              .news__cards-card-linkData 
+                p 
+                  img(src="../src/assets/svg/clock.svg", alt="") 
+                  p=data
+    
+    header.header
+        nav.nav__content.container 
+          ul.nav__content-list
+            h2 TOTEMBO
+            +link('Часы')
+            +link('Кольца')
+            +link('Серьги')
+            +link('Браслеты')
+            +link('Клатчи')
+            +link('Цепочки')
+          .nav__content-icons
+            a RU 
+            a(href="")
+              img(src="../src/assets/svg/love.svg", alt="")
+            a(href="")
+              img(src="../src/assets/svg/cart.svg", alt="")
+            a(href="")
+              img(src="../src/assets/svg/user.svg", alt="")
+            a(href="")
+              img(src="../src/assets/svg/serach.svg", alt="")
+        .burger__menu
+          button#burger-btn.menu
+            svg(viewbox='0 0 64 48')
+              path(d='M19,15 L45,15 C70,15 58,-2 49.0177126,7 L19,37')
+              path(d='M19,24 L45,24 C61.2371586,24 57,49 41,33 L32,24')
+              path(d='M45,33 L19,33 C-8,33 6,-2 22,14 L45,37')
+          h2 TOTEMBO
+          ul#nav.burger__menu-list
+            +link('Часы')
+            +link('Кольца')
+            +link('Серьги')
+            +link('Браслеты')
+            +link('Клатчи')
+            +link('Цепочки')
+            .burger__menu-list-icons
+              a RU 
+              a(href="")
+                img(src="../src/assets/svg/love.svg", alt="")
+              a(href="")
+                img(src="../src/assets/svg/cart.svg", alt="")
+              a(href="")
+                img(src="../src/assets/svg/user.svg", alt="")
+              a(href="")
+                img(src="../src/assets/svg/serach.svg", alt="")
+        hr.hr
+        .header__content.container 
+          .header__content-left
+            +header-card('50%', '../src/assets/img/card-left.png', 'Мужские часы', 'Pierre Lannier', '1 280 000 UZS')
+            +header-card('20%', '../src/assets/img/card-left2.png', 'Мужские часы', 'Swiss Military Chrono', '1 500 000 UZS')
+          +header-card('50%', '../src/assets/img/card-img.png', 'Черная мужская серьга', 'Diadema grand', '95 000 UZS')
+    main.main
+      section.sells 
+        h2.title ЛИДЕРЫ ПРОДАЖ
+        hr.hr
+        .sells__cards.container
+          +sells('NEW','../src/assets/img/sells-img1.png','Мужские часы','Cartier','1 300 000 UZS' )
+          +sells('15%','../src/assets/img/sells-img2.png','Мужские часы','Audemars Piguet','1 420 000 UZS' )
+          +sells('30%','../src/assets/img/sells-img3.png','Мужские часы ','Tag Heuer Carrera Space','1 120 000 UZS' )
+          +sells('10%','../src/assets/img/sells-img4.png','Мужские часы','L Duchen','950 000 UZS' )
+          +sells-nosale('../src/assets/img/sells-img5.png','Мужские часы','Rolex','2 450 000 UZS' )
+          +sells-nosale('../src/assets/img/sells-img6.png','Мужское кольцо ','Spikes','1 450 000 UZS' )
+          +sells('50%','../src/assets/img/sells-img7.png','Мужские часы','Pierre Lannier','1 280 000 UZS' )
+          +sells('20%','../src/assets/img/sells-img8.png','Мужское кольцо ','TIAMO','1 000 000 UZS' )
+          +sells('30%','../src/assets/img/sells-img9.png','Мужские часы','Tag Heuer Carrera Space','1 120 000 UZS' )
+          +sells-nosale('../src/assets/img/sells-img10.png','Мужской браслет','Montblanc','845 000 UZS' )
+          +sells('10%','../src/assets/img/sells-img11.png','Мужские часы','Jaeger-LeCoultre','2 450 000 UZS' )
+          +sells-nosale('../src/assets/img/sells-img12.png','Мужской браслет','HOCKEY','750 000 UZS' )
+        a.title.link Еще
+      section.news 
+        h2.title Последние новости
+        hr.hr 
+        .news__cards.container
+          +news-card('Советы',"../src/assets/img/news-img1.png",'Как выбрать первые японские часы – советы эксперта', 'Задумавшись о том, какие японские часы приобрести, следует держать в уме следующие цифры: в Японии существуют около 2800 фирм, так или иначе связанных с часовым ...', ' 19.04.2021 | 17:30')
+          +news-card('Советы',"../src/assets/img/news-img2.png",'HAIQIN Мужские роскошные механические часы', 'Водонепроницаемые часы с двойным турбийоном мужские автоматические часы — купить товар онлайн с бесплатной доставкой до всему миру!', '20.05.2021 | 18:30')
+    footer.footer
+      .footer__content.container
+        ul.footer__content-list 
+          h2.footer-title.logo TOTEMBO
+          li
+            a(href="#") Скидки
+          li
+            a(href="#") Блог
+          li
+            a(href="#") Частые вопросы
+          li
+            a(href="#") Доставка
+          li
+            a(href="#") Гарантия
+          li
+            a(href="#") Возврат
+        ul.footer__content-list.footer-list2
+          h2.footer-title Товары
+          li
+            a(href="#") Часы
+          li
+            a(href="#") Кольца
+          li
+            a(href="#") Серьги
+          li
+            a(href="#") Браслеты
+          li
+            a(href="#") Клатчи
+          li
+            a(href="#") Цепочки
+        .footer__content-contact 
+            h2.footer-title Контакты
+            p Ул. Аския, Яккасарайский район, Ташкент, Узбекистан
+            .contact
+              a(href="tel: +998 97 777 77 97") +998 97 777 77 97
+              a(href="tel: +998 97 777 77 97") +998 97 777 77 97 <br>
+            a(href="email: totembo@exapmle.com") totembo@exapmle.com
+            h3 СОЦИАЛЬНЫЕ СЕТИ
+            .footer__content-contact-link 
+              a(href="")
+                img(src="../src/assets/svg/f.svg", alt="")
+              a(href="")
+                img(src="../src/assets/svg/i.svg", alt="")
+              a(href="")
+                img(src="../src/assets/svg/t.svg", alt="")

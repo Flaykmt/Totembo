@@ -1,0 +1,48 @@
+@import 'variables.scss';
+
+.sale{
+  position: absolute;
+  background-color: $color;
+  color: $c-white;
+  padding: 11px 39px;
+  border-radius: 10px;
+  font-size: 22px;
+  top: 16px;
+  left: 22px;
+  text-transform: uppercase;
+}
+.hr{
+  width: 1320px;
+  height: 2px;
+  border-radius: 0.5px;
+  background: $color;
+  margin: 0 auto;
+  border: none;
+}
+.title{
+  font-size: 30px;
+  font-family: M4;
+  text-align: center;
+  padding: 0 0 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.sells-btn{
+  background-color: #fff;
+  position: absolute;
+  padding: 15px;
+  border-radius: 10px;
+  top: 20px;
+  right: 19px;
+  cursor: pointer;
+  &.btn2{
+    top: 90px;
+  }
+}
+.footer-title{
+  font-size: 22px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2.2px;
+  padding: 0 0 40px;
+}
